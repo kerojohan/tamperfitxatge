@@ -6,6 +6,8 @@
 // @author       You
 // @match        https://fitxatge.csuc.cat/marcajes.php
 // @grant        none
+// @updateURL   https://raw.githubusercontent.com/kerojohan/tamperfitxatge/master/fitxatge.js
+// @downloadURL https://raw.githubusercontent.com/kerojohan/tamperfitxatge/master/fitxatge.js
 // ==/UserScript==
 function isPastDate(dateText) {
     var inputDate = dateText.split(" ");
