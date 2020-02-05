@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Fitxatge
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3
 // @description  Plugin no oficial eina fitxatge
 // @author       You
 // @match        https://fitxatge.csuc.cat/marcajes.php
@@ -105,7 +105,7 @@ var today = new Date();
 	<li>Aturada mínima per dinar de 30 minuts</li>  \
 	</ul></div><div style=\"width:100%;display: block;\"><p><b>De  mitjans  de  juny  a  mitjans  de  setembre</b>  i  <b>de  Nadal  a  Reis</b></p>  \
 	<ul style=\"width:100%;display: block;\"><li>Jornada contínua  de  dilluns  a divendres, de 8.00 a 15.00 hores (35 h/s).</li>  \
-	<li>Aturada per esmorzar de 20 minuts</li>  </ul>     \
+	<li>Aturada per esmorzar de 15 minuts</li>  </ul>     \
 	<p><b>De mitjans de setembre al desembre</b>, partida de dilluns a dijous i contínua el divendres per a un total de 37,5 h/s.</p><ul><li>De dilluns a dijous: 8 hores diaries</li> <li>Divendres: 5:30 hores</li>  \
 	<li>Aturada mínima per dinar de 30 minuts</li>  </ul> <p>*Extensió completament extraoficial, les dades mostrades poden no ser les correctes, el desenvolupador no es fa responsable del seu ús.</p>  <div> ");
 	    
