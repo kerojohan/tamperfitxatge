@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Fitxatge
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      0.4
 // @description  Plugin no oficial eina fitxatge
 // @author       You
 // @match        https://fitxatge.csuc.cat/marcajes.php
@@ -64,7 +64,7 @@ var today = new Date();
         var horestreballades = tempstreballat / (1000 * 60 * 60)
         if (horestreballades >= 8) {
             $("#hores").css("color", "red")
-        } else if (horestreballades >= 7 || (today.getDate()==5 && horestreballades >= 5) ) {
+        } else if (horestreballades >= 7 || (today.getDay()==5 && horestreballades >= 5) ) {
             $("#hores").css("color", "orange")
         }
     }
