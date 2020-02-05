@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Fitxatge
 // @namespace    http://tampermonkey.net/
-// @version      0.4
+// @version      0.41
 // @description  Plugin no oficial eina fitxatge
 // @author       You
 // @match        https://fitxatge.csuc.cat/marcajes.php
@@ -90,13 +90,15 @@ var today = new Date();
                 }
             }
         });
-        $("#info").prepend("<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\"><div class=\"column\" id='hores'></div><i class=\"fa fa-info-circle\" style=\"font-size:36px\"></i><div class=\"column\" id='nips' style=\"overflow-x:hidden; display:none\"></div>");
-        entrades = entrades.reverse();
-
-        setInterval(function() {
-            calcul();
-        }, 1000);
-
+	    
+	 /*si hi han entrades del dia actual posar rellotge*/
+	if(entrades.length>0){
+        	$("#info").prepend("<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\"><div class=\"column\" id='hores'></div><i class=\"fa fa-info-circle\" style=\"font-size:36px\"></i><div class=\"column\" id='nips' style=\"overflow-x:hidden; display:none\"></div>");
+        	entrades = entrades.reverse();
+		setInterval(function() {
+		    calcul();
+		}, 1000);
+	}
         // info
         $('#nips').append(" <script>  $(\".fa-info-circle\").click(function(){  $(\"#nips\").toggle();});</script> \
                             <div style=\"width:100%;display: block;\" > \
