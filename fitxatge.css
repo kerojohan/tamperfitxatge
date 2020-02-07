@@ -1,0 +1,23 @@
+#taulasetmanal {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    justify-content: flex-start;
+}
+
+#taulasetmanal > table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+#taulasetmanal > table th {
+    margin: 25px;
+    width: 200px;
+}
+
+#taulasetmanal > table td {
+    width: 200px;
+    text-align: center;
+    vertical-align: middle;
+}
