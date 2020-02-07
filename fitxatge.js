@@ -130,8 +130,9 @@ function print(horesdia, horesmensuals) {
                 entrades = entrades.reverse();
             }
             if(entrades_mensuals.length >0){
-                var strmes=$('#filtres > form > select:nth-child(1) option:selected').text();
-                $(".plusinfo").append("<div id='horesmensuals'><h2  style=\"font-size:24px;display: flex;\"><span>("+strmes+":&nbsp;</span><span id=\"mh\"></span><span>h)</span></h2></div>");
+		var user=$('#filtres > form > select[name="usuarioSeleccionado"] option:selected').text();    
+                var strmes=$('#filtres > form > select[name="mesSeleccionat"] option:selected').text();
+                $(".plusinfo").append("<div id='horesmensuals'><h2  style=\"font-size:24px;display: flex;\"><span>("+user+" - "+strmes+":&nbsp;</span><span id=\"mh\"></span><span>h)</span></h2></div>");
                 entrades_mensuals = entrades_mensuals.reverse();
             }
             var hmensual = calcul(entrades_mensuals);
