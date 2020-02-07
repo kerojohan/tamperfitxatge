@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Fitxatge
 // @namespace    http://tampermonkey.net/
-// @version      0.42
+// @version      0.44
 // @description  Plugin no oficial eina fitxatge
 // @author       You
 // @match        https://fitxatge.csuc.cat/marcajes.php
@@ -48,6 +48,7 @@ function calcul(entrades) {
     var inicibloc = "";
     var fibloc = "";
     var tancat = false;
+    var lastValue;
     $.each(entrades, function(index, value) {
         // console.log( index + ": " + value);
         // console.log(value );
@@ -61,8 +62,9 @@ function calcul(entrades) {
             fibloc = "";
             tancat = true;
         }
+        lastValue=value[0];
     });
-    if (!tancat && inicibloc != "" && isTodayEntry(value[0])) {
+    if (!tancat && inicibloc != "" && isTodayEntry(lastValue)) {
         var ara = new Date();
         tempstreballat = tempstreballat + (ara.getTime() - inicibloc)
     }
@@ -73,6 +75,7 @@ function calcul(entrades) {
 
 function print(horesdia, horesmensuals) {
     // console.log(horesdia,horesmensuals);
+    var today = new Date();
     $("#hh").html(msToTime(horesdia,1));
 
     $("#mh").html(msToTime(horesmensuals,2));
