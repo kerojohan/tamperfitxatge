@@ -12,11 +12,12 @@
 }
 
 #taulasetmanal > table th {
-    margin: 25px;
+    margin: 10px;
     width: 200px;
 }
 
 #taulasetmanal > table td {
+    margin: 10px;
     width: 200px;
     text-align: center;
     vertical-align: middle;
