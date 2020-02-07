@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Fitxatge
 // @namespace    http://tampermonkey.net/
-// @version      0.45
+// @version      0.46
 // @description  Plugin no oficial eina fitxatge
 // @author       You
 // @match        https://fitxatge.csuc.cat/marcajes.php
@@ -130,9 +130,10 @@ function print(horesdia, horesmensuals) {
                 entrades = entrades.reverse();
             }
             if(entrades_mensuals.length >0){
-		var user=$('#filtres > form > select[name="usuarioSeleccionado"] option:selected').text();    
+		var user=$('#filtres > form > select[name="usuarioSeleccionado"] option:selected').text();  
+		if(user!=""){ user= user+" - "}
                 var strmes=$('#filtres > form > select[name="mesSeleccionat"] option:selected').text();
-                $(".plusinfo").append("<div id='horesmensuals'><h2  style=\"font-size:24px;display: flex;\"><span>("+user+" - "+strmes+":&nbsp;</span><span id=\"mh\"></span><span>h)</span></h2></div>");
+                $(".plusinfo").append("<div id='horesmensuals'><h2  style=\"font-size:24px;display: flex;\"><span>("+user+strmes+":&nbsp;</span><span id=\"mh\"></span><span>h)</span></h2></div>");
                 entrades_mensuals = entrades_mensuals.reverse();
             }
             var hmensual = calcul(entrades_mensuals);
