@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Fitxatge
 // @namespace    http://tampermonkey.net/
-// @version      0.463
+// @version      0.464
 // @description  Plugin no oficial eina fitxatge
 // @author       You
 // @match        https://fitxatge.csuc.cat/marcajes.php
@@ -150,7 +150,7 @@ function print(horesdia, horesmensuals,horessetmana) {
                 myObj.entrades_mensuals = myObj.entrades_mensuals.reverse();
             }
             var taulasetmanal="";
-            var totes_les_entrades=$.merge(myObj.entrades_mensuals, myObj.entrades_avui);
+            var totes_les_entrades=(myObj.entrades_mensuals).concat(myObj.entrades_avui);
             //console.log($.unique(totes_les_entrades.map(function (d) {return d.setmanaAny;})));
 
 
@@ -179,7 +179,6 @@ function print(horesdia, horesmensuals,horessetmana) {
 
             var hmensual = calcul(myObj.entrades_mensuals);
             var horessetmana = calcul(myObj.setmanaencurs);
-            //console.log(myObj);
             setInterval(function() {
                 var hores_dia_actual = calcul(myObj.entrades_avui);
                 print(hores_dia_actual, hmensual + hores_dia_actual,horessetmana+ hores_dia_actual);
